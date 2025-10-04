@@ -10,6 +10,6 @@ terraform {
 provider "argocd" {
   server_addr = "argo-dev.appflex.io"
   username    = "admin"
-  password    = "q1w2e3r4100@"
+  password    = "admin"
   insecure    = true
 }
