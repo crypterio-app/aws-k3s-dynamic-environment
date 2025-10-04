@@ -1,3 +1,4 @@
+
 terraform {
   required_providers {
     aws = {
@@ -117,14 +118,14 @@ resource "aws_instance" "k3s_master" {
 
   provisioner "file" {
     source      = "install-k3s.sh"
-    destination = "/tmp/install-k3s.sh"
+    destination = "/tmp/install.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
       "chmod 600 /home/ubuntu/.ssh/id_rsa",
       "chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa",
-      "chmod +x /tmp/install-k3s.sh",
+      "chmod +x /tmp/install.sh",
       "bash /tmp/install-k3s.sh ${count.index} ${self.private_ip} ${var.master_count}"
     ]
   }
@@ -164,7 +165,7 @@ resource "aws_instance" "k3s_worker" {
 
   provisioner "file" {
     source      = "install-k3s.sh"
-    destination = "/tmp/install-k3s.sh"
+    destination = "/tmp/install.sh"
   }
 
   provisioner "remote-exec" {
@@ -172,7 +173,7 @@ resource "aws_instance" "k3s_worker" {
       "chmod 600 /home/ubuntu/.ssh/id_rsa",
       "chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa",
       "chmod +x /tmp/install-k3s.sh",
-      "bash /tmp/install-k3s.sh ${count.index} ${aws_instance.k3s_master[0].private_ip} ${var.master_count}"
+      "bash /tmp/install.sh ${count.index} ${aws_instance.k3s_master[0].private_ip} ${var.master_count}"
     ]
   }
 
