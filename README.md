@@ -1,4 +1,4 @@
-<img width="1400" height="917" alt="image" src="https://github.com/user-attachments/assets/4282d448-0196-40f1-97fe-8f1b5f5d989c" />
+<img width="1400" height="924" alt="image" src="https://github.com/user-attachments/assets/f42bcb7b-24a1-405c-a20f-60c50e8033b5" />
 
 
 ## AWS K3S | Dynamic Environment   ☸️
