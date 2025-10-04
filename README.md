@@ -1,7 +1,6 @@
-<img width="1400" height="917" alt="image" src="https://github.com/user-attachments/assets/63d5df9c-1832-4a5a-b1d1-6f40c018cfd4" />
+<img width="43" height="18" alt="image" src="https://github.com/user-attachments/assets/e75481e5-9cd0-4c30-abf8-78bc6de2acd1" />
 
-
-## AWS K3S | Dynamic Environment  ☸️
+## AWS K3S | Dynamic Environment   ☸️
 K3s as a lightweight and certified Kubernetes distribution developed by Rancher Labs (now part of SUSE). Designed to streamline deployments in edge computing, IoT, and local development scenarios, K3s provides a simplified alternative to traditional Kubernetes. By consolidating essential components into a single, efficient binary, K3s aims to maintain core Kubernetes functionalities while reducing the overhead typically associated with deployment and management.
 
 
