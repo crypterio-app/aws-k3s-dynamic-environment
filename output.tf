@@ -18,3 +18,4 @@ output "k3s_worker_private_ips" {
   description = "Private IPs of all worker nodes"
   value       = aws_instance.k3s_worker[*].private_ip
 }
+
