@@ -117,7 +117,7 @@ resource "aws_instance" "k3s_master" {
   }
 
   provisioner "file" {
-    source      = "install-k3s.sh"
+    source      = "install.sh"
     destination = "/tmp/install.sh"
   }
 
@@ -164,7 +164,7 @@ resource "aws_instance" "k3s_worker" {
   }
 
   provisioner "file" {
-    source      = "install-k3s.sh"
+    source      = "install.sh"
     destination = "/tmp/install.sh"
   }
 
@@ -172,7 +172,7 @@ resource "aws_instance" "k3s_worker" {
     inline = [
       "chmod 600 /home/ubuntu/.ssh/id_rsa",
       "chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa",
-      "chmod +x /tmp/install-k3s.sh",
+      "chmod +x /tmp/install.sh",
       "bash /tmp/install.sh ${count.index} ${aws_instance.k3s_master[0].private_ip} ${var.master_count}"
     ]
   }
