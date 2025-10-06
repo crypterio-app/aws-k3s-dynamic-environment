@@ -126,7 +126,7 @@ resource "aws_instance" "k3s_master" {
       "chmod 600 /home/ubuntu/.ssh/id_rsa",
       "chown ubuntu:ubuntu /home/ubuntu/.ssh/id_rsa",
       "chmod +x /tmp/install.sh",
-      "bash /tmp/install-k3s.sh ${count.index} ${self.private_ip} ${var.master_count}"
+      "bash /tmp/install.sh ${count.index} ${self.private_ip} ${var.master_count}"
     ]
   }
 }
